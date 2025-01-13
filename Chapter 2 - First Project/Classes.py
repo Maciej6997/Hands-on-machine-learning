@@ -39,5 +39,5 @@ class ClusterSimilarity(BaseEstimator, TransformerMixin):
     def transform(self, X):
         return rbf_kernel(X, self.k_means_.cluster_centers_, gamma = self.gamma)
     
-    def get_features_names_out(self, names = None):
+    def get_feature_names_out(self, names = None):
         return [f"Similarity {i} cluster" for i in range(self.n_clusters)]
